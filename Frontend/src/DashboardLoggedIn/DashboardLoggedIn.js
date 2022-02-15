@@ -1,3 +1,4 @@
+import './DashboardLoggedIn.css';
 import React from 'react';
 
 export const DashboardLoggedIn = () => {
