@@ -4,3 +4,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.fuelQuoteHistory-container {
+    width: 85%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}

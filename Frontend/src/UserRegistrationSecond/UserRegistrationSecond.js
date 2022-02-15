@@ -1,3 +1,4 @@
+import '../index.css';
 import './UserRegistrationSecond.css';
 import React from 'react';
 
