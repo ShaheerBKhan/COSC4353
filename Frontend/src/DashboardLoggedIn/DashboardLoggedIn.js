@@ -8,7 +8,6 @@ export const DashboardLoggedIn = () => {
             <div className='dashboardLoggedIn-container'>
                 <div>Image</div>
                 <div>Description</div>
-                <div>Login</div>
             </div>
         </div>
     );
