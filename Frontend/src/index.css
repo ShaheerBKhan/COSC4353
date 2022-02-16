@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+.border-test {
+    border: 2.5px solid red;
+}
+
 .container {
     display: flex;
     flex-flow: column wrap;

@@ -17,3 +17,18 @@
 .dashboard-container > * {
     margin-bottom: 15px;
 }
+
+.login-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container .header {
+    
+}
+
+.login-container .content {
+    
+}
