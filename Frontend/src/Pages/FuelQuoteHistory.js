@@ -1,11 +1,10 @@
 import '../index.css';
-import './UserRegistrationFirst.css';
 import React from 'react';
 
-export const UserRegistrationFirst = () => {
+export const FuelQuoteHistory = () => {
     return(
         <div className='container'>
-            <div className='dashboard-container'>
+            <div className='fuelQuoteHistory-container'>
                 <div>Image</div>
                 <div>Description</div>
                 <div>Login</div>

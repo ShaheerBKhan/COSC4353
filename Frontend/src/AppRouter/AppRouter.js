@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Routes , Route } from 'react-router-dom';
 
-import { Dashboard } from '../Dashboard/Dashboard';
-import { DashboardLoggedIn } from '../DashboardLoggedIn/DashboardLoggedIn';
-import { FuelQuoteForm } from '../FuelQuoteForm/FuelQuoteForm';
-import { FuelQuoteHistory } from '../FuelQuoteHistory/FuelQuoteHistory';
-import { UserAccount } from '../UserAccount/UserAccount';
-import { UserRegistrationFirst } from '../UserRegistrationFirst/UserRegistrationFirst';
-import { UserRegistrationSecond } from '../UserRegistrationSecond/UserRegistrationSecond';
+import { Dashboard } from '../Pages/Dashboard';
+import { DashboardLoggedIn } from '../Pages/DashboardLoggedIn';
+import { FuelQuoteForm } from '../Pages/FuelQuoteForm';
+import { FuelQuoteHistory } from '../Pages/FuelQuoteHistory';
+import { UserAccount } from '../Pages/UserAccount';
+import { UserRegistrationFirst } from '../Pages/UserRegistrationFirst';
+import { UserRegistrationSecond } from '../Pages/UserRegistrationSecond';
 
 export const AppRouter = () => {
     return(

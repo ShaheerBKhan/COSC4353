@@ -1,11 +1,10 @@
 import '../index.css';
-import './FuelQuoteHistory.css';
 import React from 'react';
 
-export const FuelQuoteHistory = () => {
+export const FuelQuoteForm = () => {
     return(
         <div className='container'>
-            <div className='fuelQuoteHistory-container'>
+            <div className='dashboard-container'>
                 <div>Image</div>
                 <div>Description</div>
                 <div>Login</div>

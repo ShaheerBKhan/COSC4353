@@ -1,8 +1,7 @@
 import '../index.css';
-import './FuelQuoteForm.css';
 import React from 'react';
 
-export const FuelQuoteForm = () => {
+export const UserRegistrationFirst = () => {
     return(
         <div className='container'>
             <div className='dashboard-container'>

@@ -15,3 +15,58 @@
     align-items: center;
     justify-content: center;
 }
+
+.dashboard-container {
+    width: 85%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.dashboard-container > * {
+    margin-bottom: 15px;
+}
+
+.login-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container .header {
+    
+}
+
+.login-container .content {
+    
+}
+
+.dashboardLoggedIn-container {
+    width: 85%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.fuelQuoteHistory-container {
+    width: 85%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.userAccount-container {
+    width: 85%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}

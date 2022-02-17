@@ -1,5 +1,4 @@
 import '../index.css';
-import './Dashboard.css';
 import React, { useState } from 'react';
 
 export const Dashboard = () => {
@@ -18,7 +17,8 @@ export const Dashboard = () => {
                     <div className='header' onClick={() => HandleLogin()}>Login</div>
                     <div className='content' style={{display: (isLoginFolded ? 'none' : 'block')}}>
                         <div>User</div>
-                        <div>Login</div>
+                        <div>Password</div>
+                        <div>Signup</div>
                     </div>
                 </div>
             </div>
