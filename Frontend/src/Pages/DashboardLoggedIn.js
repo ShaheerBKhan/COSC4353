@@ -19,7 +19,8 @@ export const DashboardLoggedIn = () => {
                 <div className='account-container'>
                     <div className='header' onClick={() => HandleAccountFolded()} style={{borderBottom: isAccountFolded ? "0" : "1px solid rgb(141,141,141)"}}>Account Information</div>
                     <div className='content' style={{display: (isAccountFolded ? 'none' : 'block')}}>
-                        <div><Link to={'/UserAccount'}>Manage Account.</Link></div>
+                        <div><Link to={'/UserAccount'}>User Account.</Link></div>
+                        <div><Link to={'/UserRegistrationSecond'}>Configure User Account.</Link></div>
                     </div>
                 </div>
                 <div className='fuel-container'>
