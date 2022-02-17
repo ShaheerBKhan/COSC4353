@@ -6,7 +6,7 @@ import { Image } from './Components/Image';
 export const Dashboard = () => {
     const [isLoginFolded, setIsLoginFolded] = useState(true);
 
-    const HandleLogin = () => {
+    const HandleFolded = () => {
         setIsLoginFolded(prev => !prev);
     };
 
@@ -16,7 +16,7 @@ export const Dashboard = () => {
                 <div className='flexbox-row-center'><Image src={"https://www.shipleyenergy.com/wp-content/uploads/2021/01/construction-fuel-service-1.jpg"} alt={"Fuel Construction Image"} height={"auto"} width={"65%"}></Image></div>
                 <div>Welcome to our fuel quote application for COSC4353. To start, enter your username and password inside the login. If you do not have an account, please register.</div>
                 <div className='login-container'>
-                    <div className='header' onClick={() => HandleLogin()} style={{borderBottom: isLoginFolded ? "0" : "1px solid rgb(141,141,141)"}}>Login</div>
+                    <div className='header' onClick={() => HandleFolded()} style={{borderBottom: isLoginFolded ? "0" : "1px solid rgb(141,141,141)"}}>Login</div>
                     <div className='content' style={{display: (isLoginFolded ? 'none' : 'block')}}>
                         <form className='flexbox-column-start'>
                             <label for="username">Userrname:</label>
