@@ -5,6 +5,67 @@
     box-sizing: border-box;
 }
 
+.Custom_Form{
+    background-color: rgba(178, 189, 206, 0.397);
+    }
+    .Input_form{
+        max-width: 500px;
+        margin: auto;
+        border-radius: 5px;
+        background-color: rgb(177, 206, 174);
+        padding: 15px;
+    }
+    input[type = text], select{
+        width:100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display:inline-block;
+        border:1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type = Number], select{
+        width:100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display:inline-block;
+        border:1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type = date], select{
+        width:100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display:inline-block;
+        border:1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type = password], select{
+        width:100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display:inline-block;
+        border:1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type = submit]{
+        width:100%;
+        padding: 14px 20px;
+        background-color: rgb(161,161,161);
+        margin: 8px 0;
+        display:inline-block;
+        border:1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        cursor: pointer;
+    } 
+    input[type=submit]:hover{
+        background-color: rgb(137, 158, 101);
+    }
+
 .container {
     display: flex;
     flex-flow: column wrap;
@@ -87,13 +148,6 @@ div > .Image {
     margin-bottom: 15px;
 }
 
-.submit-button {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    padding: 5px 15px 5px 15px;
-    border: 1px solid black;
-}
-
 .login-container {
     width: 85%;
     display: flex;
@@ -137,6 +191,72 @@ div > .Image {
 
 .dashboardLoggedIn-container > * {
     margin: 15px 10px;
+}
+
+.account-container {
+    width: 85%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    
+    border: 2.5px solid rgb(121,121,121);
+    border-radius: 15px;
+
+    box-shadow: 0px 0px 4.5px rgb(121,121,121);
+}
+
+.account-container .header {
+    padding: 15px 5px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-container .content {
+    width: 100%; 
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+.account-container .content > * {
+    padding: 5px 10px;
+}
+
+.fuel-container {
+    width: 85%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    
+    border: 2.5px solid rgb(121,121,121);
+    border-radius: 15px;
+
+    box-shadow: 0px 0px 4.5px rgb(121,121,121);
+}
+
+.fuel-container .header {
+    padding: 15px 5px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.fuel-container .content {
+    width: 100%; 
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+.fuel-container .content > * {
+    padding: 5px 10px;
 }
 
 .fuelQuoteHistory-container {

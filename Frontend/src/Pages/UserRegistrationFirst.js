@@ -3,11 +3,15 @@ import React from 'react';
 
 export const UserRegistrationFirst = () => {
     return(
-        <div className='container'>
-            <div className='dashboard-container'>
-                <div>Image</div>
-                <div>Description</div>
-                <div>Login</div>
+        <div className="Custom_Form">
+            <div class = "Input_form">
+                <form>
+                    <label for = "Username" > Username </label>
+                    <input type="text" name = "Username" placeholder="Username"></input>
+                    <label for = "Password" > Password</label>
+                    <input type="password" name = "password" placeholder="password"></input>
+                    <input type = "submit" value = "Submit"></input>
+                </form>
             </div>
         </div>
     );
