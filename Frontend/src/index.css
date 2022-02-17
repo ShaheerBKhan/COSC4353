@@ -9,6 +9,61 @@
     border: 2.5px solid red;
 }
 
+div > .Image {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+}
+
+.input-border {
+    margin-bottom: 5px;
+    border: 2.5px solid black;
+}
+
+.flexbox-row-start {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.flexbox-row-center {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexbox-row-end {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flexbox-column-start {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.flexbox-column-center {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexbox-column-end {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-end;
+    justify-content: center;
+}
+
 .container {
     display: flex;
     flex-flow: column wrap;
@@ -22,26 +77,54 @@
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+}
+
+.dashboard-container:first-child {
+    margin-top: 25px;
 }
 
 .dashboard-container > * {
     margin-bottom: 15px;
 }
 
+.submit-button {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 5px 15px 5px 15px;
+    border: 1px solid black;
+}
+
 .login-container {
+    width: 85%;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
+    
+    border: 2.5px solid rgb(121,121,121);
+    border-radius: 15px;
+
+    box-shadow: 0px 0px 4.5px rgb(121,121,121);
 }
 
 .login-container .header {
-    
+    padding: 15px 5px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-container .content {
-    
+    width: 100%; 
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+.login-container .content > * {
+    padding: 5px 10px;
 }
 
 .dashboardLoggedIn-container {
@@ -59,7 +142,10 @@
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+}
+
+.fuelQuoteHistory-container > * {
+    margin-bottom: 15px;
 }
 
 .userAccount-container {
@@ -69,4 +155,17 @@
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+}
+
+.fuelquote-instance {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    
+    border: 2.5px solid rgb(121,121,121);
+    border-radius: 15px;
+
+    box-shadow: 0px 0px 4.5px rgb(121,121,121); 
 }
