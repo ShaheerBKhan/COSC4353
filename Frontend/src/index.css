@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
 .border-test {
     border: 2.5px solid red;
 }
@@ -61,13 +68,6 @@ div > .Image {
     display: flex;
     flex-flow: column wrap;
     align-items: flex-end;
-    justify-content: center;
-}
-
-.container {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
     justify-content: center;
 }
 
@@ -142,6 +142,7 @@ div > .Image {
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
+    margin-top: 15px;
 }
 
 .fuelQuoteHistory-container > * {
@@ -158,14 +159,18 @@ div > .Image {
 }
 
 .fuelquote-instance {
-    width: 100%;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
+    width: 85%;
     
     border: 2.5px solid rgb(121,121,121);
     border-radius: 15px;
 
     box-shadow: 0px 0px 4.5px rgb(121,121,121); 
+}
+
+.fuelquote-instance .content {
+    padding: 10px 15px;
+}
+
+.fuelquote-instance .content > * {
+    margin-bottom: 5px;
 }

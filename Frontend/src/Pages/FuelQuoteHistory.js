@@ -4,23 +4,27 @@ import React from 'react';
 const FuelQuoteInstance = (props) => {
     return(
         <div className='fuelquote-instance'>
-            <div>{props.price}</div>
-            <div>{props.location}</div>
+            <div className='content'>
+                <div>Location: {props.location}</div>
+                <div>Fuel Ammount: {props.fuelAmount} Gallons</div>
+                <div>Price: {props.price}</div>
+            </div>
         </div>
     );
 }
 
 export const FuelQuoteHistory = () => {
     const FuelQuoteInstanceList = [
-        <FuelQuoteInstance price={"10"} location={"Houston"}></FuelQuoteInstance>,
-        <FuelQuoteInstance price={"20"} location={"Dallas"}></FuelQuoteInstance>,
-        <FuelQuoteInstance price={"30"} location={"Austin"}></FuelQuoteInstance>,
-        <FuelQuoteInstance price={"40"} location={"Lubbock"}></FuelQuoteInstance>,
-        <FuelQuoteInstance price={"50"} location={"Galveston"}></FuelQuoteInstance>
+        <FuelQuoteInstance fuelAmmount={"5"} price={"10"} location={"Houston"}></FuelQuoteInstance>,
+        <FuelQuoteInstance fuelAmmount={"6"} price={"20"} location={"Dallas"}></FuelQuoteInstance>,
+        <FuelQuoteInstance fuelAmmount={"7"} price={"30"} location={"Austin"}></FuelQuoteInstance>,
+        <FuelQuoteInstance fuelAmmount={"8"} price={"40"} location={"Lubbock"}></FuelQuoteInstance>,
+        <FuelQuoteInstance fuelAmmount={"9"} price={"50"} location={"Galveston"}></FuelQuoteInstance>
     ];
 
     return(
         <div className='container'>
+            <div style={{marginTop: "15px", fontSize: "24px"}}>Fuel Quote History</div>
             <div className='fuelQuoteHistory-container'>
                 {FuelQuoteInstanceList}
             </div>
