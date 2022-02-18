@@ -4,22 +4,22 @@ import React from 'react';
 export const UserRegistrationSecond = () => {
     return(
      <div className='Custom_Form'>
-        <div class = "Input_form">
+        <div className="Input_form">
             <form>
                 <label for = "Full Name" > Full Name</label>
-                <input type="text" name = "Full Name" placeholder="Full Name"></input>
+                <input type="text" name = "Full Name" placeholder="Full Name" maxlength = "50" required></input>
 
                 <label for = "Address 1" > Address 1</label>
-                <input type="text" name = "Address 1" placeholder="Address 1"></input>
+                <input type="text" name = "Address 1" placeholder="Address 1" maxlength = "100" required></input>
 
                 <label for = "Address 2" > Address 2</label>
-                <input type="text" name = "Address 2" placeholder="Address 2"></input>
+                <input type="text" name = "Address 2" placeholder="Address 2" maxlength = "100" ></input>
 
                 <label for = "City" > City</label>
-                <input type="text" name = "city" placeholder="City"></input>
+                <input type="text" name = "City" placeholder="City" maxlength = "100" required></input>
 
-                <label for = "State"> State</label>
-                <select name = "State">
+                <label for = "State"> State</label >
+                <select name = "State" required>
                     <option value="" disabled selected hidden>Chose a State Please</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -75,9 +75,9 @@ export const UserRegistrationSecond = () => {
                 </select>
 
                 <label for = "Zipcode" > Zipcode</label>
-                <input type="number" name = "Zipcode" placeholder="Zipcode"></input>
+                <input type="number" name = "Zipcode" placeholder="Zipcode" min="00000" max = "999999999" required></input>
 
-                <input type = "submit" value = "Submit"></input>
+                <input type = "submit" value = "REGISTER"></input>
             </form>
         </div>
     </div>
