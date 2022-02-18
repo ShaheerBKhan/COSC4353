@@ -297,3 +297,20 @@ div > .Image {
 .fuelquote-instance .content > * {
     margin-bottom: 5px;
 }
+
+.useraccount-instance {
+    width: 85%;
+  
+    border: 2.5px solid rgb(121, 121, 121);
+    border-radius: 15px;
+    background-color: rgb(177, 206, 174);
+    box-shadow: 2px 2px 4.5px rgb(121, 121, 121);
+  }
+  
+  .useraccount-instance .content {
+    padding: 10px 15px;
+  }
+  
+  .useraccount-instance .content > * {
+    margin-bottom: 5px;
+  }

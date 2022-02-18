@@ -6,6 +6,7 @@ import { Image } from './Components/Image';
 export const Dashboard = () => {
     const [isLoginFolded, setIsLoginFolded] = useState(true);
 
+    // Handles the folding of dashboard login button
     const HandleFolded = () => {
         setIsLoginFolded(prev => !prev);
     };
@@ -23,7 +24,7 @@ export const Dashboard = () => {
                             <input className='input-border' type="text" id="username"></input>
                             <label for="password">Password</label>
                             <input className='input-border' type="text" id="password"></input>
-                            <input className='submit-button' type="submit" value="Submit"></input>
+                            <input type="submit" value = "Submit"></input>
                         </form>
                         <Link to={'/UserRegistrationFirst'}>Register for an account.</Link>
                     </div>
