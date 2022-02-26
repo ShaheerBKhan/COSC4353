@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Image } from './Components/Image';
 
+import { GetUser } from '../API/Login';
+
 export const Dashboard = () => {
     const [isLoginFolded, setIsLoginFolded] = useState(true);
 
@@ -14,9 +16,8 @@ export const Dashboard = () => {
         setIsLoginFolded(prev => !prev);
     };
 
-    const HandleSubmit = () => {
-        console.log(username);
-        console.log(password);
+    const HandleSubmit = async () => {
+        await GetUser(username, password);
     }
 
     return(

@@ -1,12 +1,14 @@
 import axios from 'axios';
 
-const GetUser = async (username, password) => {
-    const isUserRegisted = await axios.get('/Login', { 
-        params: {
-            username: username,
-            password: password
-        }
-    });
-
+export const GetUser = async (username, password) => {
+    const isUserRegisted = await axios.get(
+        `http://localhost:5000/Login`, 
+        { 
+            params: {
+                username: username,
+                password: password
+            }
+        });
+        
     return isUserRegisted;
 };
