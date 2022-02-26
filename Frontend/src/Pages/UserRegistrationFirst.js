@@ -3,18 +3,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const UserRegistrationFirst = () => {
+    const HandleSubmit = () => {
+    }
+    
     return(
         <div className="Custom_Form">
             <div className= "Input_form">
                 <form>
-                    <label for = "Username" > Username </label>
+                    <label htmlFor="Username" > Username </label>
                     <input type="text" name = "Username" placeholder="Username" required></input>
 
-                    <label for = "Password" > Password</label>
+                    <label htmlFor="Password" > Password</label>
                     <input type="password" name = "Password" placeholder="Password" required></input>
-                    
-                    <input type = "submit" value = "LOGIN"></input>
                 </form>
+                <button className='submit-button' onClick={HandleSubmit}>Submit</button>
             </div>
         </div>
     );

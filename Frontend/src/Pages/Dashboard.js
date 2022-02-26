@@ -6,10 +6,18 @@ import { Image } from './Components/Image';
 export const Dashboard = () => {
     const [isLoginFolded, setIsLoginFolded] = useState(true);
 
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
     // Handles the folding of dashboard login button
     const HandleFolded = () => {
         setIsLoginFolded(prev => !prev);
     };
+
+    const HandleSubmit = () => {
+        console.log(username);
+        console.log(password);
+    }
 
     return(
         <div className='container'>
@@ -20,12 +28,12 @@ export const Dashboard = () => {
                     <div className='header' onClick={() => HandleFolded()} style={{borderBottom: isLoginFolded ? "0" : "1px solid rgb(141,141,141)"}}>Login</div>
                     <div className='content' style={{display: (isLoginFolded ? 'none' : 'block')}}>
                         <form className='flexbox-column-start'>
-                            <label for="username">Userrname:</label>
-                            <input className='input-border' type="text" id="username"></input>
-                            <label for="password">Password</label>
-                            <input className='input-border' type="text" id="password"></input>
-                            <input type="submit" value = "Submit"></input>
+                            <label htmlFor="username">Userrname:</label>
+                            <input className='input-border' type="text" id="username" onChange={(event) => setUsername(event.target.value)}></input>
+                            <label htmlFor="password">Password</label>
+                            <input className='input-border' type="text" id="password" onChange={(event) => setPassword(event.target.value)}></input>
                         </form>
+                        <button className='submit-button' onClick={HandleSubmit}>Submit</button>
                         <Link to={'/UserRegistrationFirst'}>Register for an account.</Link>
                     </div>
                 </div>

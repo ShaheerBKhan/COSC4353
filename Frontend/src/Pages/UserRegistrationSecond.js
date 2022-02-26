@@ -2,23 +2,26 @@ import '../index.css';
 import React from 'react';
 
 export const UserRegistrationSecond = () => {
+    const HandleSubmit = () => {
+    }
+    
     return(
      <div className='Custom_Form'>
         <div className="Input_form">
             <form>
-                <label for = "Full Name" > Full Name</label>
+                <label htmlFor="Full Name" > Full Name</label>
                 <input type="text" name = "Full Name" placeholder="Full Name" maxlength = "50" required></input>
 
-                <label for = "Address 1" > Address 1</label>
+                <label htmlFor="Address 1" > Address 1</label>
                 <input type="text" name = "Address 1" placeholder="Address 1" maxlength = "100" required></input>
 
-                <label for = "Address 2" > Address 2</label>
+                <label htmlFor="Address 2" > Address 2</label>
                 <input type="text" name = "Address 2" placeholder="Address 2" maxlength = "100" ></input>
 
-                <label for = "City" > City</label>
+                <label htmlFor="City" > City</label>
                 <input type="text" name = "City" placeholder="City" maxlength = "100" required></input>
 
-                <label for = "State"> State</label >
+                <label htmlFor="State"> State</label >
                 <select name = "State" required>
                     <option value="" disabled selected hidden>Chose a State Please</option>
                     <option value="AL">Alabama</option>
@@ -74,11 +77,10 @@ export const UserRegistrationSecond = () => {
                     <option value="WY">Wyoming</option>
                 </select>
 
-                <label for = "Zipcode" > Zipcode</label>
+                <label htmlFor="Zipcode" > Zipcode</label>
                 <input type="number" name = "Zipcode" placeholder="Zipcode" min="00000" max = "999999999" required></input>
-
-                <input type = "submit" value = "REGISTER"></input>
             </form>
+            <button className='submit-button' onClick={HandleSubmit}>Submit</button>
         </div>
     </div>
     );
