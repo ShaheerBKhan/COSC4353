@@ -1,6 +1,8 @@
 import '../index.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
+import { GetUserFuelHistory } from '../Controllers/FrontendControllers';
 
 const FuelQuoteInstance = (props) => {
     return(
