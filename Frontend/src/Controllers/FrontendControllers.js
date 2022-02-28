@@ -14,26 +14,24 @@ export const GetUser = async (username, password) => {
     return isUserInDatabase;
 };
 
-export const GetUserAccountInformation = async (username, password) => {
+export const GetUserAccountInformation = async (userId) => {
     const accountInformation = await axios.get(
         `http://localhost:5000/GetUserAccountInformation`, 
         { 
             params: {
-                username: username,
-                password: password
+                userId
             }
         });
         
     return accountInformation;
 };
 
-export const GetUserFuelHistory = async (username, password) => {
+export const GetUserFuelHistory = async (userId) => {
     const fuelQuoteHistory = await axios.get(
         `http://localhost:5000/GetUserFuelHistory`, 
         { 
             params: {
-                username: username,
-                password: password
+                userId
             }
         });
         

@@ -17,7 +17,6 @@ export const DashboardLoggedIn = () => {
 
     return(
         <div className='container'>
-            <div>User Id: {userId}</div>
             <div className='dashboardLoggedIn-container'>
                 <div className='account-container'>
                     <div className='header' onClick={() => HandleAccountFolded()} style={{borderBottom: isAccountFolded ? "0" : "1px solid rgb(141,141,141)"}}>Account Information</div>
