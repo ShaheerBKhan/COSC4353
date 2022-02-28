@@ -15,7 +15,7 @@ export const GetUser = async (username, password) => {
 
 export const PostFuelQuoteForm = async (gallons, deliveryAddress, deliveryDate, pricePerGallon, totalAmount) => {
     await axios.post(
-        `http://localhost:5000/PostFuelQuoteForm`, 
+        `http://localhost:5000/PostFuelQuoteForm`, {}, 
         { 
             params: {
                 gallons: gallons,
@@ -29,7 +29,7 @@ export const PostFuelQuoteForm = async (gallons, deliveryAddress, deliveryDate, 
 
 export const PostUserRegistrationFirst = async (username, password) => {
     await axios.post(
-        `http://localhost:5000/PostUserRegistrationFirst`, 
+        `http://localhost:5000/PostUserRegistrationFirst`, {},  
         { 
             params: {
                 username: username,
@@ -40,7 +40,7 @@ export const PostUserRegistrationFirst = async (username, password) => {
 
 export const PostUserRegistrationSecond = async (fullName, addressOne, addressTwo, city, state, zipcode) => {
     await axios.post(
-        `http://localhost:5000/PostUserRegistrationSecond`, 
+        `http://localhost:5000/PostUserRegistrationSecond`, {},  
         { 
             params: {
                 fullName: fullName,

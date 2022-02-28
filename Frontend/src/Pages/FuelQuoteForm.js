@@ -9,7 +9,7 @@ export const FuelQuoteForm = () => {
     const [deliveryAddress, setDeliveryAddress] = useState();
     const [deliveryDate, setDeliveryDate] = useState();
     const [pricePerGallon, setPricePerGallong] = useState(0);
-    const [totalAmount, setTotalAmount] = useState();
+    const [totalAmount, setTotalAmount] = useState(0);
 
     const HandleSubmit = async () => {
         await PostFuelQuoteForm(gallons, deliveryAddress, deliveryDate, pricePerGallon, totalAmount);
