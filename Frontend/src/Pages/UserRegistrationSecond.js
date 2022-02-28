@@ -1,9 +1,11 @@
 import '../index.css';
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { PostUserRegistrationSecond } from '../Controllers/FrontendControllers';
 
 export const UserRegistrationSecond = () => {
+    const { userId } = useParams();
 
     const [fullName, setFullname] = useState();
     const [addressOne, setAddressOne] = useState();

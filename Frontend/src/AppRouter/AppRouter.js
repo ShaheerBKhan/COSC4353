@@ -14,12 +14,12 @@ export const AppRouter = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Dashboard />}></Route>
-                <Route path="/DashboardLoggedIn" element={<DashboardLoggedIn />}></Route>
-                <Route path="/FuelQuoteForm" element={<FuelQuoteForm />}></Route>
-                <Route path="/FuelQuoteHistory" element={<FuelQuoteHistory />}></Route>
-                <Route path="/UserAccount" element={<UserAccount />}></Route>
-                <Route path="/UserRegistrationFirst" element={<UserRegistrationFirst />}></Route>
-                <Route path="/UserRegistrationSecond" element={<UserRegistrationSecond />}></Route>
+                <Route path="/DashboardLoggedIn/:userId" element={<DashboardLoggedIn />}></Route>
+                <Route path="/FuelQuoteForm/:userId" element={<FuelQuoteForm />}></Route>
+                <Route path="/FuelQuoteHistory/:userId" element={<FuelQuoteHistory />}></Route>
+                <Route path="/UserAccount/:userId" element={<UserAccount />}></Route>
+                <Route path="/UserRegistrationFirst/:userId" element={<UserRegistrationFirst />}></Route>
+                <Route path="/UserRegistrationSecond/:userId" element={<UserRegistrationSecond />}></Route>
             </Routes>
         </BrowserRouter>
     );

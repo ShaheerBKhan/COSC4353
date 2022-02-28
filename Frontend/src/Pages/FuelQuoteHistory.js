@@ -1,5 +1,6 @@
 import '../index.css';
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 const FuelQuoteInstance = (props) => {
     return(
@@ -14,6 +15,8 @@ const FuelQuoteInstance = (props) => {
 }
 
 export const FuelQuoteHistory = () => {
+    const { userId } = useParams();
+    
     const FuelQuoteInstanceList = [
         <FuelQuoteInstance fuelAmmount={"5"} price={"10"} location={"Houston"}></FuelQuoteInstance>,
         <FuelQuoteInstance fuelAmmount={"6"} price={"20"} location={"Dallas"}></FuelQuoteInstance>,

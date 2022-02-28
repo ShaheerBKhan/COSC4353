@@ -1,9 +1,11 @@
 import '../index.css';
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { PostFuelQuoteForm } from '../Controllers/FrontendControllers';
 
 export const FuelQuoteForm = () => {
+    const { userId } = useParams();
 
     const [gallons, setGallons] = useState(0);
     const [deliveryAddress, setDeliveryAddress] = useState();

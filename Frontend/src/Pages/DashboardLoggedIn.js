@@ -1,8 +1,10 @@
 import '../index.css';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export const DashboardLoggedIn = () => {
+    const { userId } = useParams();
+
     const [isAccountFolded, setIsAccountFolded] = useState(true);
     const [isFuelFolded, setIsFuelFolded] = useState(true);
 
@@ -15,6 +17,7 @@ export const DashboardLoggedIn = () => {
 
     return(
         <div className='container'>
+            <div>User Id: {userId}</div>
             <div className='dashboardLoggedIn-container'>
                 <div className='account-container'>
                     <div className='header' onClick={() => HandleAccountFolded()} style={{borderBottom: isAccountFolded ? "0" : "1px solid rgb(141,141,141)"}}>Account Information</div>
