@@ -11,7 +11,6 @@ export const Dashboard = () => {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
-    // Handles the folding of dashboard login button
     const HandleFolded = () => {
         setIsLoginFolded(prev => !prev);
     };

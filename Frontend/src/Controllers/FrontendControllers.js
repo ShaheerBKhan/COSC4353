@@ -13,13 +13,16 @@ export const GetUser = async (username, password) => {
     return isUserInDatabase;
 };
 
-export const PostFuelQuoteForm = async (username, password) => {
+export const PostFuelQuoteForm = async (gallons, deliveryAddress, deliveryDate, pricePerGallon, totalAmount) => {
     await axios.post(
         `http://localhost:5000/PostFuelQuoteForm`, 
         { 
             params: {
-                username: username,
-                password: password
+                gallons: gallons,
+                deliveryAddress: deliveryAddress,
+                deliveryDate: deliveryDate,
+                pricePerGallon: pricePerGallon,
+                totalAmount: totalAmount
             }
         });
 };
@@ -35,13 +38,17 @@ export const PostUserRegistrationFirst = async (username, password) => {
         });
 };
 
-export const PostUserRegistrationSecond = async (username, password) => {
+export const PostUserRegistrationSecond = async (fullName, addressOne, addressTwo, city, state, zipcode) => {
     await axios.post(
         `http://localhost:5000/PostUserRegistrationSecond`, 
         { 
             params: {
-                username: username,
-                password: password
+                fullName: fullName,
+                addressOne: addressOne,
+                addressTwo: addressTwo,
+                city: city,
+                state: state,
+                zipcode: zipcode
             }
         });
 };
