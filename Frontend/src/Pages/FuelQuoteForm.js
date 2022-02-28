@@ -1,8 +1,34 @@
 import '../index.css';
-import React from 'react';
+import React, { useState } from 'react';
 
 export const FuelQuoteForm = () => {
+
+    const [gallons, setGallons] = useState(0);
+    const [deliveryAddress, setDeliveryAddress] = useState();
+    const [deliveryDate, setDeliveryDate] = useState();
+    const [pricePerGallon, setPricePerGallong] = useState(0);
+    const [totalAmount, setTotalAmount] = useState();
+
+    const HandleGallons = (event) => {
+        const newGallonAmount = event.target.value;
+        
+        setGallons(newGallonAmount)
+        setTotalAmount(newGallonAmount * pricePerGallon);
+    }
+
+    const HandlePricePerGallon = (event) => {
+        const newPricePerGallon = event.target.value;
+
+        setPricePerGallong(newPricePerGallon);
+        setTotalAmount(newPricePerGallon * gallons);
+    }
+
     const HandleSubmit = () => {
+        console.log("Gallons: ", gallons);
+        console.log("Delivery Address: ", deliveryAddress);
+        console.log("Delivery Date: ", deliveryDate);
+        console.log("Price per Gallon: ", pricePerGallon);
+        console.log("Total Amount: ", totalAmount);
     }
     
     return(
@@ -10,20 +36,18 @@ export const FuelQuoteForm = () => {
             <div className="Input_form">
                 <form>
                     <label htmlFor="Gallons Requested" > Gallons Requested</label>
-                    <input type="number" name = "Gallons Requested" placeholder="Gallons" required></input>
+                    <input type="number" name = "Gallons Requested" placeholder="Gallons" required onChange={(event) => HandleGallons(event)}></input>
 
                     <label htmlFor="Delivery Address" > Delivery Address</label>
-                    <input type="text" name = "Delivery Address" placeholder="Address" required></input>
+                    <input type="text" name = "Delivery Address" placeholder="Address" required onChange={(event) => setDeliveryAddress(event.target.value)}></input>
 
                     <label htmlFor="Delivery Date"> Delivery Date</label>
-                    <input type = "date" name = "Delivery Date" required></input>
+                    <input type = "date" name = "Delivery Date" required onChange={(event) => setDeliveryDate(event.target.value)}></input>
 
                     <label htmlFor="Suggested Price / Gallon" > Suggested Price / Gallon</label>
-                    <input type="number" name = "Suggested Price / Gallon" placeholder="Suggested Price / Gallon" required></input>
-
-                    <label htmlFor="Total Amount" > Total Amount </label>
-                    <input type="number" name = "Total Amount " placeholder="Total" required></input>
+                    <input type="number" name = "Suggested Price / Gallon" placeholder="Suggested Price / Gallon" required onChange={(event) => HandlePricePerGallon(event)}></input>
                 </form>
+                <div>Total Amount: ${totalAmount.toFixed(2)}</div>
                 <button className='submit-button' onClick={HandleSubmit}>Submit</button>
             </div>
         </div>

@@ -8,8 +8,8 @@ import { GetUser } from '../API/Login';
 export const Dashboard = () => {
     const [isLoginFolded, setIsLoginFolded] = useState(true);
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
 
     // Handles the folding of dashboard login button
     const HandleFolded = () => {
@@ -17,6 +17,8 @@ export const Dashboard = () => {
     };
 
     const HandleSubmit = async () => {
+        console.log("Username: ", username);
+        console.log("Password: ", password);
         await GetUser(username, password);
     }
 
@@ -31,6 +33,7 @@ export const Dashboard = () => {
                         <form className='flexbox-column-start'>
                             <label htmlFor="username">Userrname:</label>
                             <input className='input-border' type="text" id="username" onChange={(event) => setUsername(event.target.value)}></input>
+                            
                             <label htmlFor="password">Password</label>
                             <input className='input-border' type="text" id="password" onChange={(event) => setPassword(event.target.value)}></input>
                         </form>

@@ -1,8 +1,22 @@
 import '../index.css';
-import React from 'react';
+import React, { useState } from 'react';
 
 export const UserRegistrationSecond = () => {
+
+    const [fullName, setFullname] = useState();
+    const [addressOne, setAddressOne] = useState();
+    const [addressTwo, setAddressTwo] = useState();
+    const [city, setCity] = useState();
+    const [state, setState] = useState();
+    const [zipcode, setZipcode] = useState();
+
     const HandleSubmit = () => {
+        console.log("Fullname: ", fullName);
+        console.log("Address One: ", addressOne);
+        console.log("Address Two: ", addressTwo);
+        console.log("City: ", city);
+        console.log("State: ", state);
+        console.log("Zipecode: ", zipcode);
     }
     
     return(
@@ -10,19 +24,19 @@ export const UserRegistrationSecond = () => {
         <div className="Input_form">
             <form>
                 <label htmlFor="Full Name" > Full Name</label>
-                <input type="text" name = "Full Name" placeholder="Full Name" maxlength = "50" required></input>
+                <input type="text" name = "Full Name" placeholder="Full Name" maxlength = "50" required onChange={(event) => setFullname(event.target.value)}></input>
 
                 <label htmlFor="Address 1" > Address 1</label>
-                <input type="text" name = "Address 1" placeholder="Address 1" maxlength = "100" required></input>
+                <input type="text" name = "Address 1" placeholder="Address 1" maxlength = "100" required onChange={(event) => setAddressOne(event.target.value)}></input>
 
                 <label htmlFor="Address 2" > Address 2</label>
-                <input type="text" name = "Address 2" placeholder="Address 2" maxlength = "100" ></input>
+                <input type="text" name = "Address 2" placeholder="Address 2" maxlength = "100" onChange={(event) => setAddressTwo(event.target.value)}></input>
 
                 <label htmlFor="City" > City</label>
-                <input type="text" name = "City" placeholder="City" maxlength = "100" required></input>
+                <input type="text" name = "City" placeholder="City" maxlength = "100" required onChange={(event) => setCity(event.target.value)}></input>
 
                 <label htmlFor="State"> State</label >
-                <select name = "State" required>
+                <select name = "State" required onChange={(event) => setState(event.target.value)}>
                     <option value="" disabled selected hidden>Chose a State Please</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -78,7 +92,7 @@ export const UserRegistrationSecond = () => {
                 </select>
 
                 <label htmlFor="Zipcode" > Zipcode</label>
-                <input type="number" name = "Zipcode" placeholder="Zipcode" min="00000" max = "999999999" required></input>
+                <input type="number" name = "Zipcode" placeholder="Zipcode" min="00000" max = "999999999" required onChange={(event) => setZipcode(event.target.value)}></input>
             </form>
             <button className='submit-button' onClick={HandleSubmit}>Submit</button>
         </div>
