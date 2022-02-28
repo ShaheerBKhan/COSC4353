@@ -1,6 +1,8 @@
 import '../index.css';
 import React, { useState } from 'react';
 
+import { PostFuelQuoteForm } from '../Controllers/FrontendControllers';
+
 export const FuelQuoteForm = () => {
 
     const [gallons, setGallons] = useState(0);
@@ -8,6 +10,10 @@ export const FuelQuoteForm = () => {
     const [deliveryDate, setDeliveryDate] = useState();
     const [pricePerGallon, setPricePerGallong] = useState(0);
     const [totalAmount, setTotalAmount] = useState();
+
+    const HandleSubmit = async () => {
+        await PostFuelQuoteForm(gallons, deliveryAddress, deliveryDate, pricePerGallon, totalAmount);
+    }
 
     const HandleGallons = (event) => {
         const newGallonAmount = event.target.value;
@@ -21,14 +27,6 @@ export const FuelQuoteForm = () => {
 
         setPricePerGallong(newPricePerGallon);
         setTotalAmount(newPricePerGallon * gallons);
-    }
-
-    const HandleSubmit = () => {
-        console.log("Gallons: ", gallons);
-        console.log("Delivery Address: ", deliveryAddress);
-        console.log("Delivery Date: ", deliveryDate);
-        console.log("Price per Gallon: ", pricePerGallon);
-        console.log("Total Amount: ", totalAmount);
     }
     
     return(

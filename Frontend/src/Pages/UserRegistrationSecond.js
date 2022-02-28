@@ -1,6 +1,8 @@
 import '../index.css';
 import React, { useState } from 'react';
 
+import { PostUserRegistrationSecond } from '../Controllers/FrontendControllers';
+
 export const UserRegistrationSecond = () => {
 
     const [fullName, setFullname] = useState();
@@ -10,13 +12,8 @@ export const UserRegistrationSecond = () => {
     const [state, setState] = useState();
     const [zipcode, setZipcode] = useState();
 
-    const HandleSubmit = () => {
-        console.log("Fullname: ", fullName);
-        console.log("Address One: ", addressOne);
-        console.log("Address Two: ", addressTwo);
-        console.log("City: ", city);
-        console.log("State: ", state);
-        console.log("Zipecode: ", zipcode);
+    const HandleSubmit = async () => {
+        await PostUserRegistrationSecond(fullName, addressOne, addressTwo, city, state, zipcode);
     }
     
     return(

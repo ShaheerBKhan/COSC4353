@@ -1,15 +1,15 @@
 import '../index.css';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
+import { PostUserRegistrationFirst } from '../Controllers/FrontendControllers';
 
 export const UserRegistrationFirst = () => {
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
-    const HandleSubmit = () => {
-        console.log("Username: ", username);
-        console.log("Password: ", password);
+    const HandleSubmit = async () => {
+        await PostUserRegistrationFirst(username, password);
     }
     
     return(

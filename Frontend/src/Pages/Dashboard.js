@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Image } from './Components/Image';
 
-import { GetUser } from '../Controllers/Login';
+import { GetUser } from '../Controllers/FrontendControllers';
 
 export const Dashboard = () => {
     const [isLoginFolded, setIsLoginFolded] = useState(true);
