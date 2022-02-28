@@ -10,21 +10,19 @@ var client = await DatabaseConnection();
 
 app.get('/GetUser', async (req, res) => {
     console.log("Parameters: ", req.query);
-    const result = await client.query("SELECT * FROM Test");
-    console.log(result.rows);
-
+    
     res.send(true);
 });
 
-app.post('/PostFuelQuoteForm', (req, res) => {
+app.post('/PostFuelQuoteForm', async (req, res) => {
     console.log("Parameters: ", req.query);
 });
 
-app.post('/PostUserRegistrationFirst', (req, res) => {
+app.post('/PostUserRegistrationFirst', async (req, res) => {
     console.log("Parameters: ", req.query);
 });
 
-app.post('/PostUserRegistrationSecond', (req, res) => {
+app.post('/PostUserRegistrationSecond', async (req, res) => {
     console.log("Parameters: ", req.query);
 });
 
