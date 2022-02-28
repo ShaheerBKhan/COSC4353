@@ -22,6 +22,10 @@ export const UserAccountInstance = (props) => {
 export const UserAccount = () => {
   const { userId } = useParams();
 
+  useEffect(async () => {
+    const userAccountInformation = await GetUserAccountInformation(userId);
+  }, []);
+
   const UserInstanceList = [
     <UserAccountInstance
       fullName={"John Smith"}

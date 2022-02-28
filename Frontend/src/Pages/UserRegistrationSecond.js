@@ -14,6 +14,10 @@ export const UserRegistrationSecond = () => {
     const [state, setState] = useState();
     const [zipcode, setZipcode] = useState();
 
+    useEffect(async () => {
+        const userAccountInformation = await GetUserAccountInformation(userId);
+    }, []);
+
     const HandleSubmit = async () => {
         await PostUserRegistrationSecond(fullName, addressOne, addressTwo, city, state, zipcode);
     }

@@ -18,6 +18,10 @@ const FuelQuoteInstance = (props) => {
 
 export const FuelQuoteHistory = () => {
     const { userId } = useParams();
+
+    useEffect(async () => {
+        const userHistory = await GetUserFuelHistory(userId);
+    }, []);
     
     const FuelQuoteInstanceList = [
         <FuelQuoteInstance fuelAmmount={"5"} price={"10"} location={"Houston"}></FuelQuoteInstance>,
