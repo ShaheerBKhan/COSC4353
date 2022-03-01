@@ -14,7 +14,7 @@ export const FuelQuoteForm = () => {
     const [totalAmount, setTotalAmount] = useState(0);
 
     const HandleSubmit = async () => {
-        await PostFuelQuoteForm(gallons, deliveryAddress, deliveryDate, pricePerGallon, totalAmount);
+        await PostFuelQuoteForm(userId, gallons, deliveryAddress, deliveryDate, pricePerGallon, totalAmount);
     }
 
     const HandleGallons = (event) => {

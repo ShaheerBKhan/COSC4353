@@ -2,6 +2,7 @@ import axios from 'axios';
 
 /* *** GET REQUESTS *** */
 export const GetUser = async (username, password) => {
+    console.log("GetUser Function: ", username, password);
     const isUserInDatabase = await axios.get(
         `http://localhost:5000/GetUserInDatabase`, 
         { 
@@ -39,11 +40,12 @@ export const GetUserFuelHistory = async (userId) => {
 };
 
 /* *** POST REQUESTS *** */
-export const PostFuelQuoteForm = async (gallons, deliveryAddress, deliveryDate, pricePerGallon, totalAmount) => {
+export const PostFuelQuoteForm = async (userId, gallons, deliveryAddress, deliveryDate, pricePerGallon, totalAmount) => {
     await axios.post(
         `http://localhost:5000/PostFuelQuoteForm`, {}, 
         { 
             params: {
+                userId: userId,
                 gallons: gallons,
                 deliveryAddress: deliveryAddress,
                 deliveryDate: deliveryDate,
@@ -64,11 +66,12 @@ export const PostUserRegistrationFirst = async (username, password) => {
         });
 };
 
-export const PostUserRegistrationSecond = async (fullName, addressOne, addressTwo, city, state, zipcode) => {
+export const PostUserRegistrationSecond = async (userId, fullName, addressOne, addressTwo, city, state, zipcode) => {
     await axios.post(
         `http://localhost:5000/PostUserRegistrationSecond`, {},  
         { 
             params: {
+                userId: userId,
                 fullName: fullName,
                 addressOne: addressOne,
                 addressTwo: addressTwo,

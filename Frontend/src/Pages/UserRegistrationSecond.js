@@ -19,7 +19,7 @@ export const UserRegistrationSecond = () => {
     }, []);
 
     const HandleSubmit = async () => {
-        await PostUserRegistrationSecond(fullName, addressOne, addressTwo, city, state, zipcode);
+        await PostUserRegistrationSecond(userId, fullName, addressOne, addressTwo, city, state, zipcode);
     }
     
     return(

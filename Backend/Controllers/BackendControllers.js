@@ -11,33 +11,49 @@ var client = await DatabaseConnection();
 /* *** GET REQUESTS *** */
 app.get('/GetUserInDatabase', async (req, res) => {
     console.log("Parameters: ", req.query);
+    const parameters = req.query;
 
     res.send(true);
 });
 
 app.get('/GetUserAccountInformation', async (req, res) => {
     console.log("Parameters: ", req.query);
+    const parameters = req.query;
 
     res.send(true);
 });
 
 app.get('/GetUserFuelHistory', async (req, res) => {
     console.log("Parameters: ", req.query);
+    const parameters = req.query;
 
     res.send(true);
 });
 
 /* *** POST REQUESTS *** */
 app.post('/PostFuelQuoteForm', async (req, res) => {
-    console.log("Parameters: ", req.query);
+    const parameters = req.query;
+    client.query(
+        `INSERT INTO FuelQuote(UserId, Gallons, DeliveryAddress, DeliveryDate, PricePerGallon, TotalAmount)
+        VALUES(${parameters.userId}, ${parameters.gallons}, ${parameters.deliveryAddress}, ${parameters.deliveryDate}, ${parameters.pricePerGallon}, ${parameters.totalAmount})`
+    );
 });
 
 app.post('/PostUserRegistrationFirst', async (req, res) => {
-    console.log("Parameters: ", req.query);
+    const parameters = req.query;
+    client.query(
+        `INSERT INTO Credential(Username, Password)
+        VALUES('${parameters.username}', '${parameters.password}')`
+    );
 });
 
 app.post('/PostUserRegistrationSecond', async (req, res) => {
     console.log("Parameters: ", req.query);
+    const parameters = req.query;
+    client.query(
+        `INSERT INTO UserInformation(UserId, Fullname, AddressOne, AddressTwo, City, State, ZipCode)
+        VALUES(${parameters.userId},${parameters.fullName},${parameters.addressOne},${parameters.addressTwo},${parameters.city},${parameters.state},${parameters.zipcode},)`
+    );
 });
 
 
