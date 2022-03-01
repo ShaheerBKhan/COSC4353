@@ -1,11 +1,9 @@
 import '../index.css';
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
 
 import { PostUserRegistrationFirst } from '../Controllers/FrontendControllers';
 
 export const UserRegistrationFirst = () => {
-    const { userId } = useParams();
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();

@@ -18,7 +18,7 @@ export const AppRouter = () => {
                 <Route path="/FuelQuoteForm/:userId" element={<FuelQuoteForm />}></Route>
                 <Route path="/FuelQuoteHistory/:userId" element={<FuelQuoteHistory />}></Route>
                 <Route path="/UserAccount/:userId" element={<UserAccount />}></Route>
-                <Route path="/UserRegistrationFirst/:userId" element={<UserRegistrationFirst />}></Route>
+                <Route path="/UserRegistrationFirst" element={<UserRegistrationFirst />}></Route>
                 <Route path="/UserRegistrationSecond/:userId" element={<UserRegistrationSecond />}></Route>
             </Routes>
         </BrowserRouter>

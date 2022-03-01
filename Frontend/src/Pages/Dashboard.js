@@ -16,8 +16,6 @@ export const Dashboard = () => {
     };
 
     const HandleSubmit = async () => {
-        console.log("Username: ", username);
-        console.log("Password: ", password);
         await GetUser(username, password);
     }
 
