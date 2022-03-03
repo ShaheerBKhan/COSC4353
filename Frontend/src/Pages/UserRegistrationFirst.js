@@ -9,7 +9,14 @@ export const UserRegistrationFirst = () => {
     const [password, setPassword] = useState();
 
     const HandleSubmit = async () => {
-        await PostUserRegistrationFirst(username, password);
+        const isComplete = await PostUserRegistrationFirst(username, password);
+        console.log(isComplete);
+        if(isComplete) {
+            alert("SUCCESS: User has been created.");
+        }
+        else {
+            alert("ERROR: Username already exists in the database. Please select another username.");
+        }
     }
     
     return(

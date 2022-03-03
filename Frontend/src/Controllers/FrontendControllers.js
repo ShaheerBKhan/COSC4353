@@ -1,9 +1,8 @@
 import axios from 'axios';
 
 /* *** GET REQUESTS *** */
-export const GetUser = async (username, password) => {
-    console.log("GetUser Function: ", username, password);
-    const isUserInDatabase = await axios.get(
+export const GetUserInDatabase = async (username, password) => {
+    const result = await axios.get(
         `http://localhost:5000/GetUserInDatabase`, 
         { 
             params: {
@@ -12,11 +11,11 @@ export const GetUser = async (username, password) => {
             }
         });
         
-    return isUserInDatabase;
+    return result.data;
 };
 
 export const GetUserAccountInformation = async (userId) => {
-    const accountInformation = await axios.get(
+    const result = await axios.get(
         `http://localhost:5000/GetUserAccountInformation`, 
         { 
             params: {
@@ -24,11 +23,11 @@ export const GetUserAccountInformation = async (userId) => {
             }
         });
         
-    return accountInformation;
+    return result.data;
 };
 
 export const GetUserFuelHistory = async (userId) => {
-    const fuelQuoteHistory = await axios.get(
+    const result = await axios.get(
         `http://localhost:5000/GetUserFuelHistory`, 
         { 
             params: {
@@ -36,12 +35,12 @@ export const GetUserFuelHistory = async (userId) => {
             }
         });
         
-    return fuelQuoteHistory;
+    return result.data;
 };
 
 /* *** POST REQUESTS *** */
 export const PostFuelQuoteForm = async (userId, gallons, deliveryAddress, deliveryDate, pricePerGallon, totalAmount) => {
-    await axios.post(
+    const result = await axios.post(
         `http://localhost:5000/PostFuelQuoteForm`, {}, 
         { 
             params: {
@@ -53,10 +52,12 @@ export const PostFuelQuoteForm = async (userId, gallons, deliveryAddress, delive
                 totalAmount: totalAmount
             }
         });
+    
+    return result.data;
 };
 
 export const PostUserRegistrationFirst = async (username, password) => {
-    await axios.post(
+    const result = await axios.post(
         `http://localhost:5000/PostUserRegistrationFirst`, {},  
         { 
             params: {
@@ -64,10 +65,12 @@ export const PostUserRegistrationFirst = async (username, password) => {
                 password: password
             }
         });
+    
+    return result.data;
 };
 
 export const PostUserRegistrationSecond = async (userId, fullName, addressOne, addressTwo, city, state, zipcode) => {
-    await axios.post(
+    const result = await axios.post(
         `http://localhost:5000/PostUserRegistrationSecond`, {},  
         { 
             params: {
@@ -80,4 +83,6 @@ export const PostUserRegistrationSecond = async (userId, fullName, addressOne, a
                 zipcode: zipcode
             }
         });
+
+    return result.data;
 };

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Image } from './Components/Image';
 
-import { GetUser } from '../Controllers/FrontendControllers';
+import { GetUserInDatabase } from '../Controllers/FrontendControllers';
 
 export const Dashboard = () => {
     const [isLoginFolded, setIsLoginFolded] = useState(true);
@@ -16,7 +16,12 @@ export const Dashboard = () => {
     };
 
     const HandleSubmit = async () => {
-        await GetUser(username, password);
+        const isInDatabase = await GetUserInDatabase(username, password);
+        if(isInDatabase) {
+            alert("SUCCESS: Account is logged in.")
+        } else {
+            alert("ERROR: Not found in database. Please register your account.");
+        }
     }
 
     return(
@@ -28,7 +33,7 @@ export const Dashboard = () => {
                     <div className='header' onClick={() => HandleFolded()} style={{borderBottom: isLoginFolded ? "0" : "1px solid rgb(141,141,141)"}}>Login</div>
                     <div className='content' style={{display: (isLoginFolded ? 'none' : 'block')}}>
                         <form className='flexbox-column-start'>
-                            <label htmlFor="username">Userrname:</label>
+                            <label htmlFor="username">Username:</label>
                             <input className='input-border' type="text" id="username" onChange={(event) => setUsername(event.target.value)}></input>
                             
                             <label htmlFor="password">Password</label>

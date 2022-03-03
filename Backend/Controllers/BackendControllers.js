@@ -10,54 +10,84 @@ var client = await DatabaseConnection();
 
 /* *** GET REQUESTS *** */
 app.get('/GetUserInDatabase', async (req, res) => {
-    const parameters = req.query;
-
-    res.send(true);
+    try {
+        const parameters = req.query;
+        const result = await client.query(`SELECT * FROM CREDENTIAL WHERE username = '${parameters.username}' AND password = '${parameters.password}'`);
+        const isUserInDatabase = result.rows.length;
+    
+        res.send(Boolean(isUserInDatabase));
+    } catch(e) {
+        res.send(false);
+    }
 });
 
 app.get('/GetUserAccountInformation', async (req, res) => {
-    const parameters = req.query;
-
-    res.send(true);
+    try {
+        
+        res.send(true);
+    } catch(e) {
+        res.send(false);
+    }
 });
 
 app.get('/GetUserFuelHistory', async (req, res) => {
-    const parameters = req.query;
-
-    res.send(true);
+    try {
+        
+        res.send(true);
+    } catch(e) {
+        res.send(false);
+    }
 });
 
 /* *** POST REQUESTS *** */
 app.post('/PostFuelQuoteForm', async (req, res) => {
-    const parameters = req.query;
+    try {
+        const parameters = req.query;
     
-    let dateString = parameters.deliveryDate.toString();
-    dateString = dateString.replace('-','');
-    dateString = dateString.replace('-','');
+        let dateString = parameters.deliveryDate.toString();
+        dateString = dateString.replace('-','');
+        dateString = dateString.replace('-','');
 
-    const response = await client.query(
-        `INSERT INTO FuelQuote(UserId, Gallons, DeliveryAddress, DeliveryDate, PricePerGallon, TotalAmount)
-        VALUES(${parameters.userId}, ${parameters.gallons}, '${parameters.deliveryAddress}', to_date(${dateString}::text, 'YYYYMMDD'), ${parameters.pricePerGallon}, ${parameters.totalAmount})`
-    );
-    console.log(response);
+        const response = await client.query(
+            `INSERT INTO FuelQuote(UserId, Gallons, DeliveryAddress, DeliveryDate, PricePerGallon, TotalAmount)
+            VALUES(${parameters.userId}, ${parameters.gallons}, '${parameters.deliveryAddress}', to_date(${dateString}::text, 'YYYYMMDD'), ${parameters.pricePerGallon}, ${parameters.totalAmount})`
+        );
+        
+        res.send(true);
+    } catch(e) {
+        res.send(false);
+    }
 });
 
 app.post('/PostUserRegistrationFirst', async (req, res) => {
     const parameters = req.query;
-    const response = await client.query(
-        `INSERT INTO Credential(Username, Password)
-        VALUES('${parameters.username}', '${parameters.password}')`
-    );
-    console.log(response);
+    try
+    {
+        const response = await client.query(
+            `INSERT INTO Credential(Username, Password)
+            VALUES('${parameters.username}', '${parameters.password}')`
+        );
+        
+        res.send(true)
+    }
+    catch(e)
+    {
+        res.send(false);
+    }
 });
 
 app.post('/PostUserRegistrationSecond', async (req, res) => {
-    const parameters = req.query;
-    const response = await client.query(
-        `INSERT INTO UserInformation(UserId, Fullname, AddressOne, AddressTwo, City, State, ZipCode)
-        VALUES(${parameters.userId},'${parameters.fullName}','${parameters.addressOne}','${parameters.addressTwo}','${parameters.city}','${parameters.state}',${parameters.zipcode})`
-    );
-    console.log(response);
+    try {
+        const parameters = req.query;
+        const response = await client.query(
+            `INSERT INTO UserInformation(UserId, Fullname, AddressOne, AddressTwo, City, State, ZipCode)
+            VALUES(${parameters.userId},'${parameters.fullName}','${parameters.addressOne}','${parameters.addressTwo}','${parameters.city}','${parameters.state}',${parameters.zipcode})`
+        );
+        
+        res.send(true);
+    } catch(e) {
+        res.send(false);
+    }
 });
 
 
