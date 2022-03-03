@@ -1,6 +1,6 @@
 import '../index.css';
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { GetUserAccountInformation } from '../Controllers/FrontendControllers';
 
@@ -21,6 +21,7 @@ export const UserAccountInstance = (props) => {
   
 export const UserAccount = () => {
   const { userId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(async () => {
     const userAccountInformation = await GetUserAccountInformation(userId);

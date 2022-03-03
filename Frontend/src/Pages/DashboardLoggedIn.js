@@ -1,9 +1,10 @@
 import '../index.css';
 import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
 export const DashboardLoggedIn = () => {
     const { userId } = useParams();
+    const navigate = useNavigate();
 
     const [isAccountFolded, setIsAccountFolded] = useState(true);
     const [isFuelFolded, setIsFuelFolded] = useState(true);

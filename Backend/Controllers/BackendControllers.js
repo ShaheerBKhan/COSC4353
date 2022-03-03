@@ -13,9 +13,20 @@ app.get('/GetUserInDatabase', async (req, res) => {
     try {
         const parameters = req.query;
         const result = await client.query(`SELECT * FROM CREDENTIAL WHERE username = '${parameters.username}' AND password = '${parameters.password}'`);
-        const isUserInDatabase = result.rows.length;
     
-        res.send(Boolean(isUserInDatabase));
+        res.send(Boolean(result.rows.length));
+    } catch(e) {
+        res.send(false);
+    }
+});
+
+app.get('/GetUserId', async (req, res) => {
+    try {
+        const parameters = req.query;
+        const result = await client.query(`SELECT userid FROM CREDENTIAL WHERE username = '${parameters.username}' AND password = '${parameters.password}'`);
+        console.log(result.rows[0]);
+    
+        res.send(result.rows[0]);
     } catch(e) {
         res.send(false);
     }

@@ -1,11 +1,12 @@
 import '../index.css';
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { GetUserAccountInformation, PostUserRegistrationSecond } from '../Controllers/FrontendControllers';
 
 export const UserRegistrationSecond = () => {
     const { userId } = useParams();
+    const navigate = useNavigate();
 
     const [fullName, setFullname] = useState();
     const [addressOne, setAddressOne] = useState();

@@ -1,11 +1,13 @@
 import '../index.css';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Image } from './Components/Image';
 
-import { GetUserInDatabase } from '../Controllers/FrontendControllers';
+import { GetUserInDatabase, GetUserId } from '../Controllers/FrontendControllers';
 
 export const Dashboard = () => {
+    const navigate = useNavigate();
+
     const [isLoginFolded, setIsLoginFolded] = useState(true);
 
     const [username, setUsername] = useState();
@@ -16,9 +18,12 @@ export const Dashboard = () => {
     };
 
     const HandleSubmit = async () => {
-        const isInDatabase = await GetUserInDatabase(username, password);
-        if(isInDatabase) {
+        const result = await GetUserInDatabase(username, password);
+        if(result) {
             alert("SUCCESS: Account is logged in.")
+            
+            const result = await GetUserId(username, password);
+            navigate(`/DashboardLoggedIn/${result.userid}`);
         } else {
             alert("ERROR: Not found in database. Please register your account.");
         }
@@ -37,7 +42,7 @@ export const Dashboard = () => {
                             <input className='input-border' type="text" id="username" onChange={(event) => setUsername(event.target.value)}></input>
                             
                             <label htmlFor="password">Password</label>
-                            <input className='input-border' type="text" id="password" onChange={(event) => setPassword(event.target.value)}></input>
+                            <input className='input-border' type="password" id="password" onChange={(event) => setPassword(event.target.value)}></input>
                         </form>
                         <button className='submit-button' onClick={HandleSubmit}>Submit</button>
                         <Link to={'/UserRegistrationFirst'}>Register for an account.</Link>

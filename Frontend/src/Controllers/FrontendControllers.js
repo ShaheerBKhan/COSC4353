@@ -14,6 +14,19 @@ export const GetUserInDatabase = async (username, password) => {
     return result.data;
 };
 
+export const GetUserId = async (username, password) => {
+    const result = await axios.get(
+        `http://localhost:5000/GetUserId`, 
+        { 
+            params: {
+                username: username,
+                password: password
+            }
+        });
+        
+    return result.data;
+};
+
 export const GetUserAccountInformation = async (userId) => {
     const result = await axios.get(
         `http://localhost:5000/GetUserAccountInformation`, 

@@ -1,6 +1,6 @@
 import '../index.css';
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { GetUserFuelHistory } from '../Controllers/FrontendControllers';
 
@@ -18,6 +18,7 @@ const FuelQuoteInstance = (props) => {
 
 export const FuelQuoteHistory = () => {
     const { userId } = useParams();
+    const navigate = useNavigate();
 
     useEffect(async () => {
         const userHistory = await GetUserFuelHistory(userId);

@@ -1,18 +1,20 @@
 import '../index.css';
 import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { PostUserRegistrationFirst } from '../Controllers/FrontendControllers';
 
 export const UserRegistrationFirst = () => {
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
     const HandleSubmit = async () => {
-        const isComplete = await PostUserRegistrationFirst(username, password);
-        console.log(isComplete);
-        if(isComplete) {
+        const result = await PostUserRegistrationFirst(username, password);
+        if(result) {
             alert("SUCCESS: User has been created.");
+            navigate("/");
         }
         else {
             alert("ERROR: Username already exists in the database. Please select another username.");
