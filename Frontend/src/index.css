@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+.return-button {
+    padding: 5px 10px;
+    border: 2.5px solid black;
+}
+
 .Custom_Form {
     background-color: rgba(178, 189, 206, 0.397);
 }

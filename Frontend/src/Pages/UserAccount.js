@@ -45,7 +45,7 @@ export const UserAccount = () => {
     <div className="container">
         <div style={{ marginTop: "15px", fontSize: "24px" }}>User Account</div>
         <div className="fuelQuoteHistory-container">{UserInstanceList}</div>
-        <button onClick={() => HandleClick()}>Return to Logged in Dashboard</button>
+        <button className='return-button' onClick={() => HandleClick()}>Return to Dashboard</button>
     </div>
   );
 }

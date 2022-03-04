@@ -42,7 +42,7 @@ export const FuelQuoteHistory = () => {
             <div className='fuelQuoteHistory-container'>
                 {FuelQuoteInstanceList}
             </div>
-            <button onClick={() => HandleClick()}>Return to Logged in Dashboard</button>
+            <button className='return-button' onClick={() => HandleClick()}>Return to Dashboard</button>
         </div>
     );
 }
