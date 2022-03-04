@@ -41,8 +41,10 @@ app.get('/GetUserId', async (req, res) => {
 
 app.get('/GetUserAccountInformation', async (req, res) => {
     try {
+        const parameters = req.query;
+        const result = await client.query(`SELECT * FROM userinformation WHERE userid = '${userId}'`);
         
-        res.send(true);
+        res.send(result.rows);
     } catch(e) {
         res.send(false);
     }
@@ -50,8 +52,10 @@ app.get('/GetUserAccountInformation', async (req, res) => {
 
 app.get('/GetUserFuelHistory', async (req, res) => {
     try {
+        const parameters = req.query;
+        const result = await client.query(`SELECT * FROM fuelquote WHERE userid = '${userId}'`);
         
-        res.send(true);
+        res.send(result.rows);
     } catch(e) {
         res.send(false);
     }
