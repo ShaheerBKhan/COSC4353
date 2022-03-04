@@ -21,6 +21,7 @@ export const UserRegistrationSecond = () => {
 
     const HandleSubmit = async () => {
         await PostUserRegistrationSecond(userId, fullName, addressOne, addressTwo, city, state, zipcode);
+        navigate(`/DashboardLoggedIn/${userId}`);
     }
     
     return(

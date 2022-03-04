@@ -23,6 +23,10 @@ export const FuelQuoteHistory = () => {
     useEffect(async () => {
         const userHistory = await GetUserFuelHistory(userId);
     }, []);
+
+    const HandleClick = () => {
+        navigate(`/DashboardLoggedIn/${userId}`);
+      }
     
     const FuelQuoteInstanceList = [
         <FuelQuoteInstance fuelAmmount={"5"} price={"10"} location={"Houston"}></FuelQuoteInstance>,
@@ -38,6 +42,7 @@ export const FuelQuoteHistory = () => {
             <div className='fuelQuoteHistory-container'>
                 {FuelQuoteInstanceList}
             </div>
+            <button onClick={() => HandleClick()}>Return to Logged in Dashboard</button>
         </div>
     );
 }

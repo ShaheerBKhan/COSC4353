@@ -27,6 +27,10 @@ export const UserAccount = () => {
     const userAccountInformation = await GetUserAccountInformation(userId);
   }, []);
 
+  const HandleClick = () => {
+    navigate(`/DashboardLoggedIn/${userId}`);
+  }
+
   const UserInstanceList = [
     <UserAccountInstance
       fullName={"John Smith"}
@@ -41,6 +45,7 @@ export const UserAccount = () => {
     <div className="container">
         <div style={{ marginTop: "15px", fontSize: "24px" }}>User Account</div>
         <div className="fuelQuoteHistory-container">{UserInstanceList}</div>
+        <button onClick={() => HandleClick()}>Return to Logged in Dashboard</button>
     </div>
   );
 }
