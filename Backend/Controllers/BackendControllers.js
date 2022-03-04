@@ -1,10 +1,17 @@
 import express from 'express';
 import cors from 'cors';
-
-import { DatabaseConnection } from './DatabaseConnection.js';
+import pg from 'pg';
 
 const app = express();
 app.use((cors()));
+
+const DatabaseConnection = async () => {
+    const connectionString = "postgres://ggjlsemm:TUnmgbVkNWWHNuSRtZbtvQd-WM4c_sFt@kashin.db.elephantsql.com/ggjlsemm";
+    const client = new pg.Client(connectionString);
+    await client.connect();
+
+    return client;
+}
 
 var client = await DatabaseConnection();
 

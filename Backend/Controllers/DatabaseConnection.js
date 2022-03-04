@@ -1,4 +1,4 @@
-import pg from 'pg';
+
 
 export const DatabaseConnection = async () => {
     const connectionString = "postgres://ggjlsemm:TUnmgbVkNWWHNuSRtZbtvQd-WM4c_sFt@kashin.db.elephantsql.com/ggjlsemm";
