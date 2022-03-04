@@ -21,7 +21,7 @@ export const FuelQuoteHistory = () => {
     const navigate = useNavigate();
 
     useEffect(async () => {
-        const userHistory = await GetUserFuelHistory(userId);
+        const result = await GetUserFuelHistory(userId);
     }, []);
 
     const HandleClick = () => {

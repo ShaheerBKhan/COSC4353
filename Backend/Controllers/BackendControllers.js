@@ -31,7 +31,6 @@ app.get('/GetUserId', async (req, res) => {
     try {
         const parameters = req.query;
         const result = await client.query(`SELECT userid FROM CREDENTIAL WHERE username = '${parameters.username}' AND password = '${parameters.password}'`);
-        console.log(result.rows[0]);
     
         res.send(result.rows[0]);
     } catch(e) {
@@ -42,7 +41,7 @@ app.get('/GetUserId', async (req, res) => {
 app.get('/GetUserAccountInformation', async (req, res) => {
     try {
         const parameters = req.query;
-        const result = await client.query(`SELECT * FROM userinformation WHERE userid = '${userId}'`);
+        const result = await client.query(`SELECT * FROM userinformation WHERE userid = '${parameters.userId}'`);
         
         res.send(result.rows);
     } catch(e) {
@@ -53,7 +52,7 @@ app.get('/GetUserAccountInformation', async (req, res) => {
 app.get('/GetUserFuelHistory', async (req, res) => {
     try {
         const parameters = req.query;
-        const result = await client.query(`SELECT * FROM fuelquote WHERE userid = '${userId}'`);
+        const result = await client.query(`SELECT * FROM fuelquote WHERE userid = '${parameters.userId}'`);
         
         res.send(result.rows);
     } catch(e) {

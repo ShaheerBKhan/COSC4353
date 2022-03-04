@@ -24,7 +24,7 @@ export const UserAccount = () => {
   const navigate = useNavigate();
 
   useEffect(async () => {
-    const userAccountInformation = await GetUserAccountInformation(userId);
+    const result = await GetUserAccountInformation(userId);
   }, []);
 
   const HandleClick = () => {

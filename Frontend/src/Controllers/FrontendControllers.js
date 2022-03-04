@@ -35,7 +35,7 @@ export const GetUserAccountInformation = async (userId) => {
                 userId
             }
         });
-        
+    
     return result.data;
 };
 
