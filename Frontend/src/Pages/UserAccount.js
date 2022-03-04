@@ -1,50 +1,53 @@
 import '../index.css';
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { GetUserAccountInformation } from '../Controllers/FrontendControllers';
 
-export const UserAccountInstance = (props) => {
-    return (
-      <div className="useraccount-instance">
+const UserAccountInstance = (props) => {
+  return(
+    <div className="useraccount-instance">
         <div className="content">
-          <div>Full Name: {props.fullName}</div>
-          <div>Address 1: {props.address1}</div>
-          <div>Address 2: {props.address2}</div>
-          <div>City: {props.city}</div>
-          <div>State: {props.state}</div>
-          <div>Zip Code: {props.zipCode}</div>
+            <div>Fullname: {props.fullname}</div>
+            <div>City: {props.city}</div>
+            <div>State: {props.state}</div>
+            <div>Zipcode: {props.zipcode}</div>
+            <div>Address (Primary): {props.addressone}</div>
+            <div>Address (Secondary)" {props.addresstwo}</div>
         </div>
-      </div>
-    );
-};
-  
+    </div>
+  );
+}
+
 export const UserAccount = () => {
   const { userId } = useParams();
   const navigate = useNavigate();
 
+  const [userInformation, setUserInformation] = useState([]);
+
   useEffect(async () => {
     const result = await GetUserAccountInformation(userId);
+    setUserInformation(result);
   }, []);
 
   const HandleClick = () => {
     navigate(`/DashboardLoggedIn/${userId}`);
   }
 
-  const UserInstanceList = [
-    <UserAccountInstance
-      fullName={"John Smith"}
-      address1={"12338 Main St"}
-      address2={""}
-      city={"Houston"}
-      state={"TX"}
-      zipCode={"77002"}
-    ></UserAccountInstance>,
-  ];
+  const UserAccountList = userInformation.map((userInfo, index) => {
+    return(
+      <UserAccountInstance key={index}
+      fullname={userInfo.fullname} city={userInfo.city} state={userInfo.state}
+      zipcode={userInfo.zipcode} addressone={userInfo.addressone} addresstwo={userInfo.addresstwo}></UserAccountInstance>
+    );
+  })
+  
   return (
     <div className="container">
         <div style={{ marginTop: "15px", fontSize: "24px" }}>User Account</div>
-        <div className="fuelQuoteHistory-container">{UserInstanceList}</div>
+        <div className="fuelQuoteHistory-container">
+          {UserAccountList}
+        </div>
         <button className='return-button' onClick={() => HandleClick()}>Return to Dashboard</button>
     </div>
   );
