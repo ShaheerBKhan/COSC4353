@@ -5,6 +5,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { GetUserAccountInformation } from '../Controllers/FrontendControllers';
 
 const UserAccountInstance = (props) => {
+  let isSecondAddress = true;
+  if(props.addresstwo == "undefined") {
+    isSecondAddress = false;
+  }
+
   return(
     <div className="useraccount-instance">
         <div className="content">
@@ -13,7 +18,7 @@ const UserAccountInstance = (props) => {
             <div>State: {props.state}</div>
             <div>Zipcode: {props.zipcode}</div>
             <div>Address (Primary): {props.addressone}</div>
-            <div>Address (Secondary)" {props.addresstwo}</div>
+            <div style={{display: (isSecondAddress ? 'block' : 'none')}}>Address (Secondary): {props.addresstwo}</div>
         </div>
     </div>
   );
