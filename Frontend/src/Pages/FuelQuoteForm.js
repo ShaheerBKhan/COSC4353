@@ -9,12 +9,33 @@ export const FuelQuoteForm = () => {
     const navigate = useNavigate();
 
     const [gallons, setGallons] = useState(0);
-    const [deliveryAddress, setDeliveryAddress] = useState();
-    const [deliveryDate, setDeliveryDate] = useState();
+    const [deliveryAddress, setDeliveryAddress] = useState("");
+    const [deliveryDate, setDeliveryDate] = useState(null);
     const [pricePerGallon, setPricePerGallong] = useState(0);
     const [totalAmount, setTotalAmount] = useState(0);
 
     const HandleSubmit = async () => {
+        if(!gallons) {
+            alert("Please enter a valid number for gallons (Non-zero).");
+            return;
+        }
+
+        if(!deliveryAddress) {
+            alert("Please enter a delivery address.");
+            return;
+        }
+
+        if(!deliveryDate) {
+            alert("Please enter a delivery date.");
+            return;
+        }
+
+        if(!pricePerGallon) {
+            alert("Please enter a valid number for price per gallon. (Non-zero).");
+            return;
+        }
+
+
         await PostFuelQuoteForm(userId, gallons, deliveryAddress, deliveryDate, pricePerGallon, totalAmount);
         navigate(`/DashboardLoggedIn/${userId}`);
     }

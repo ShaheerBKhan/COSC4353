@@ -8,18 +8,43 @@ export const UserRegistrationSecond = () => {
     const { userId } = useParams();
     const navigate = useNavigate();
 
-    const [fullName, setFullname] = useState();
-    const [addressOne, setAddressOne] = useState();
-    const [addressTwo, setAddressTwo] = useState();
-    const [city, setCity] = useState();
-    const [state, setState] = useState();
-    const [zipcode, setZipcode] = useState();
+    const [fullName, setFullname] = useState("");
+    const [addressOne, setAddressOne] = useState("");
+    const [addressTwo, setAddressTwo] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("");
+    const [zipcode, setZipcode] = useState(0);
 
     useEffect(async () => {
         const userAccountInformation = await GetUserAccountInformation(userId);
     }, []);
 
     const HandleSubmit = async () => {
+        if(!fullName) {
+            alert("Please enter a fullname.");
+            return;
+        }
+
+        if(!addressOne) {
+            alert("Please enter an address (Primary).");
+            return;
+        }
+
+        if(!city) {
+            alert("Please enter a city.");
+            return;
+        }
+
+        if(!state) {
+            alert("Please select a state.");
+            return;
+        }
+
+        if(!zipcode) {
+            alert("Please enter a valid zipcode.");
+            return;
+        }
+
         await PostUserRegistrationSecond(userId, fullName, addressOne, addressTwo, city, state, zipcode);
         navigate(`/DashboardLoggedIn/${userId}`);
     }
