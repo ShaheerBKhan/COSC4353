@@ -54,20 +54,19 @@ export const UserRegistrationSecond = () => {
         <div className="Input_form">
             <form>
                 <label htmlFor="Full Name" > Full Name</label>
-                <input type="text" name = "Full Name" placeholder="Full Name" maxlength = "50" required onChange={(event) => setFullname(event.target.value)}></input>
+                <input type="text" name = "Full Name" placeholder="Full Name" maxLength = "50" required onChange={(event) => setFullname(event.target.value)}></input>
 
                 <label htmlFor="Address 1" > Address 1</label>
-                <input type="text" name = "Address 1" placeholder="Address 1" maxlength = "100" required onChange={(event) => setAddressOne(event.target.value)}></input>
+                <input type="text" name = "Address 1" placeholder="Address 1" maxLength = "100" required onChange={(event) => setAddressOne(event.target.value)}></input>
 
                 <label htmlFor="Address 2" > Address 2</label>
-                <input type="text" name = "Address 2" placeholder="Address 2" maxlength = "100" onChange={(event) => setAddressTwo(event.target.value)}></input>
+                <input type="text" name = "Address 2" placeholder="Address 2" maxLength = "100" onChange={(event) => setAddressTwo(event.target.value)}></input>
 
                 <label htmlFor="City" > City</label>
-                <input type="text" name = "City" placeholder="City" maxlength = "100" required onChange={(event) => setCity(event.target.value)}></input>
+                <input type="text" name = "City" placeholder="City" maxLength = "100" required onChange={(event) => setCity(event.target.value)}></input>
 
                 <label htmlFor="State"> State</label >
-                <select name = "State" required onChange={(event) => setState(event.target.value)}>
-                    <option value="" disabled selected hidden>Chose a State Please</option>
+                <select name = "State" placeholder={"Choose a State Please"} required onChange={(event) => setState(event.target.value)}>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
