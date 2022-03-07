@@ -11,7 +11,8 @@ const FuelQuoteInstance = (props) => {
                 <div>Gallons: {props.gallons}</div>
                 <div>Price Per Gallon: {props.pricepergallon}</div>
                 <div>Delivery Address: {props.deliveryaddress}</div>
-                <div>Delivery Date: {props.deliverydate}</div>
+                <div>Delivery Date: {props.deliverydate.substring(0,10)}</div>
+                <div>Suggested Price: ${props.suggestedPrice}</div>
                 <div>Total Amount: ${props.totalamount}</div>
             </div>
         </div>
@@ -36,7 +37,8 @@ export const FuelQuoteHistory = () => {
     const FuelQuoteList = fuelQuotes.map((fuelQuote, index) => {
         return (<FuelQuoteInstance key={index} 
         gallons={fuelQuote.gallons} pricepergallon={fuelQuote.pricepergallon}
-        deliveryaddress={fuelQuote.deliveryaddress} deliverydate={fuelQuote.deliverydate} totalamount={fuelQuote.totalamount}></FuelQuoteInstance>);
+        deliveryaddress={fuelQuote.deliveryaddress} deliverydate={fuelQuote.deliverydate} 
+        suggestedPrice={fuelQuote.pricepergallon} totalamount={fuelQuote.totalamount}></FuelQuoteInstance>);
     });
 
     return(
