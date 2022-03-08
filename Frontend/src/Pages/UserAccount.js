@@ -49,7 +49,7 @@ export const UserAccount = () => {
   
   return (
     <div className="container">
-      <div className='navbar'><Link to={`/`}>Sign Out.</Link></div>
+      <div className='navbar'><Link to={`/`}>Log Out.</Link></div>
       <div style={{ marginTop: "15px", fontSize: "24px" }}>User Account</div>
       <div className="fuelQuoteHistory-container">
         {UserAccountList}

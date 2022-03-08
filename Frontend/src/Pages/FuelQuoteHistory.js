@@ -43,7 +43,7 @@ export const FuelQuoteHistory = () => {
 
     return(
         <div className='container'>
-            <div className='navbar'><Link to={`/`}>Sign Out.</Link></div>
+            <div className='navbar'><Link to={`/`}>Log Out.</Link></div>
             <div style={{marginTop: "15px", fontSize: "24px"}}>Fuel Quote History</div>
             <div className='fuelQuoteHistory-container'>
                 {FuelQuoteList}

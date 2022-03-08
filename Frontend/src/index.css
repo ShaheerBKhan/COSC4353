@@ -16,6 +16,9 @@
     border: 1px solid black;
     background-color: rgb(228, 230, 238)
 }
+.navbar > * {
+    margin-left: 15px;
+}
 
 .return-button {
     padding: 5px 10px;
