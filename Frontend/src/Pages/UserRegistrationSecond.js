@@ -44,6 +44,10 @@ export const UserRegistrationSecond = () => {
             alert("Please enter a valid zipcode.");
             return;
         }
+        if(zipcode < 10000) {
+            alert("Please enter a zipcode with atleast 5 digits.");
+            return;
+        }
 
         await PostUserRegistrationSecond(userId, fullName, addressOne, addressTwo, city, state, zipcode);
         navigate(`/DashboardLoggedIn/${userId}`);
