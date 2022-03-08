@@ -5,6 +5,18 @@
     box-sizing: border-box;
 }
 
+.navbar {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 15px;
+    border: 1px solid black;
+    background-color: rgb(228, 230, 238)
+}
+
 .return-button {
     padding: 5px 10px;
     border: 2.5px solid black;

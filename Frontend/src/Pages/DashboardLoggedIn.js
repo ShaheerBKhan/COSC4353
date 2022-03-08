@@ -31,6 +31,7 @@ export const DashboardLoggedIn = () => {
 
     return(
         <div className='container'>
+            <div className='navbar'><Link to={`/`}>Sign Out.</Link></div>
             <div className='dashboardLoggedIn-container'>
                 <div className='account-container'>
                     <div className='header' onClick={() => HandleAccountManagedFolded()} style={{borderBottom: isAccountManageFolded ? "0" : "1px solid rgb(141,141,141)"}}>Manage Account Details</div>

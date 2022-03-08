@@ -1,6 +1,6 @@
 import '../index.css';
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import { GetUserFuelHistory } from '../Controllers/FrontendControllers';
 
@@ -43,6 +43,7 @@ export const FuelQuoteHistory = () => {
 
     return(
         <div className='container'>
+            <div className='navbar'><Link to={`/`}>Sign Out.</Link></div>
             <div style={{marginTop: "15px", fontSize: "24px"}}>Fuel Quote History</div>
             <div className='fuelQuoteHistory-container'>
                 {FuelQuoteList}

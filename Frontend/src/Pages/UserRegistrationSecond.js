@@ -1,6 +1,6 @@
 import '../index.css';
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import { GetUserAccountInformation, PostUserRegistrationSecond } from '../Controllers/FrontendControllers';
 
@@ -55,6 +55,7 @@ export const UserRegistrationSecond = () => {
     
     return(
      <div className='Custom_Form'>
+        <div className='navbar'><Link to={`/`}>Sign Out.</Link></div>
         <div className="Input_form">
             <form>
                 <label htmlFor="Full Name" > Full Name</label>
