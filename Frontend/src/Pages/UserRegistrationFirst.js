@@ -33,7 +33,6 @@ export const UserRegistrationFirst = () => {
     
     return(
         <div className="Custom_Form">
-            <div className='navbar'><Link to={`/`}>Sign Out.</Link></div>
             <div className= "Input_form">
                 <form>
                     <label htmlFor="username">Userrname:</label>
