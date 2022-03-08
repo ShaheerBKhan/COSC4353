@@ -121,7 +121,7 @@ export const UserRegistrationSecond = () => {
                 </select>
 
                 <label htmlFor="Zipcode" > Zipcode</label>
-                <input type="number" name = "Zipcode" placeholder="Zipcode" min="00000" max = "999999999" required onChange={(event) => setZipcode(event.target.value)}></input>
+                <input type="number" name = "Zipcode" placeholder="Zipcode" min="10000" max = "999999999" required onChange={(event) => setZipcode(event.target.value)}></input>
             </form>
             <button className='submit-button' onClick={HandleSubmit}>Submit</button>
         </div>
