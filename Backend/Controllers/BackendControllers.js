@@ -100,6 +100,7 @@ app.post('/PostUserRegistrationFirst', async (req, res) => {
 app.post('/PostUserRegistrationSecond', async (req, res) => {
     try {
         const parameters = req.query;
+        await client.query(`DELETE FROM UserInformation WHERE UserId = ${parameters.userId} `);
         const response = await client.query(
             `INSERT INTO UserInformation(UserId, Fullname, AddressOne, AddressTwo, City, State, ZipCode)
             VALUES(${parameters.userId},'${parameters.fullName}','${parameters.addressOne}','${parameters.addressTwo}','${parameters.city}','${parameters.state}',${parameters.zipcode})`

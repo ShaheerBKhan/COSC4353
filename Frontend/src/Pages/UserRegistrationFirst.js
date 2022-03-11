@@ -1,16 +1,26 @@
 import '../index.css';
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import { PostUserRegistrationFirst } from '../Controllers/FrontendControllers';
 
 export const UserRegistrationFirst = () => {
     const navigate = useNavigate();
 
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
     const HandleSubmit = async () => {
+        if(!username) {
+            alert("Please enter a username.");
+            return;
+        }
+
+        if(!password) {
+            alert("Please enter a password.");
+            return;
+        }
+        
         const result = await PostUserRegistrationFirst(username, password);
         if(result) {
             alert("SUCCESS: User has been created.");

@@ -10,14 +10,24 @@ export const Dashboard = () => {
 
     const [isLoginFolded, setIsLoginFolded] = useState(true);
 
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
     const HandleFolded = () => {
         setIsLoginFolded(prev => !prev);
     };
 
     const HandleSubmit = async () => {
+        if(!username) {
+            alert("Please enter a username.");
+            return;
+        }
+
+        if(!password) {
+            alert("Please enter a password.");
+            return;
+        }
+
         const result = await GetUserInDatabase(username, password);
         if(result) {
             alert("SUCCESS: Account is logged in.")
