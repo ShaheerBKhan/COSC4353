@@ -39,6 +39,10 @@ export const FuelQuoteForm = () => {
             alert("Please enter a valid number for gallons (Non-zero).");
             return;
         }
+        if(gallons<=0) {
+            alert("Cannot request a non-zero gallon amount.");
+            return;
+        }
 
         if(!deliveryDate) {
             alert("Please enter a delivery date.");
